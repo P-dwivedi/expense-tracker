@@ -29,12 +29,12 @@ svg {
   --lh-1-4: 1.4;
 
   /* colors */
-  --accent: 162, 39%, 59%;
-  --bkg: 232, 19%, 30%;
-  --text: 185 26% 9%;
+  --accent: 48, 100%, 60%;
+  --bkg: 190 60% 98%;
+  --text: 180, 100%, 25%;
   --muted: 183 8% 55%;
   --light: 180 14% 85%;
-  --warning: 180, 100%, 50%;
+  --warning: 199, 100%, 65%; /* 180, 100%, 50% */
 
   /* utils */
   --space-xs: 8px;
@@ -329,7 +329,7 @@ nav .title {
   font-weight: bold;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  background: linear-gradient(to right, #3bb896, #e0f5ff);
+  background: linear-gradient(to right, #006666, #99dfff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* text-shadow: 0 0 15px rgba(59, 184, 150, 0.8),
