@@ -29,12 +29,12 @@ svg {
   --lh-1-4: 1.4;
 
   /* colors */
-  --accent: 183 74% 44%;
-  --bkg: 190 60% 98%;
+  --accent: 162, 39%, 59%;
+  --bkg: 232, 19%, 30%;
   --text: 185 26% 9%;
   --muted: 183 8% 55%;
   --light: 180 14% 85%;
-  --warning: 4 66% 63%;
+  --warning: 180, 100%, 50%;
 
   /* utils */
   --space-xs: 8px;
@@ -322,6 +322,20 @@ nav a {
   padding: var(--space-xs);
   text-decoration: none;
   font-weight: bold;
+}
+
+nav .title {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #3bb896, #e0f5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-shadow: 0 0 15px rgba(59, 184, 150, 0.8),
+                 0 0 30px rgba(59, 184, 150, 0.6),
+                 0 0 45px rgba(59, 184, 150, 0.4); */
+  background-color: #3e415b;
 }
 
 @media screen and (max-width: 525px) {
