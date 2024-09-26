@@ -2,7 +2,7 @@
 import { useLoaderData } from "react-router-dom";
 
 // helper functions
-import { createBudget, fetchData } from "../helpers"
+import { createBudget, fetchData, wait } from "../helpers"
 
 // components 
 import Intro from "../components/Intro";
@@ -21,6 +21,8 @@ export function dashboardLoader(){
 
 // action
 export async function dashboardAction({request}) {
+    await wait();
+
     const data = await request.formData();
     const {_action, ...values} = Object.fromEntries(data)
     // new user submission
