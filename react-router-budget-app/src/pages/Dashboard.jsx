@@ -58,12 +58,23 @@ const Dashboard = () => {
                 <h1>Welcome back, <span className="accent">
                 {userName}</span></h1>
                 <div className="grid-sm">
-                  {/*budgets ? () : ()*/}
-                  <div className="grid-lg">
-                    <div className="flex-lg">
+                  { 
+                    budgets && budgets.length > 0
+                    ? (
+                    <div className="grid-lg">
+                      <div className="flex-lg">
+                        <AddBudgetForm />
+                      </div>
+                    </div>
+                    )
+                    : (
+                    <div className="grid-sm">
+                        <p>Personal budgeting is the secret to financial freedom.</p>
+                        <p>Create a budget to get started!</p>
                         <AddBudgetForm />
                     </div>
-                  </div>
+                  )
+            }
                 </div>
                </div> ) : <Intro />}
         </>
