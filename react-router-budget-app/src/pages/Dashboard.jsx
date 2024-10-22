@@ -2,11 +2,12 @@
 import { useLoaderData } from "react-router-dom";
 
 // helper functions
-import { createBudget, fetchData, wait } from "../helpers"
+import { createBudget, createExpense, fetchData, wait } from "../helpers"
 
 // components 
 import Intro from "../components/Intro";
 import AddBudgetForm from "../components/AddBudgetForm";
+import AddExpenseForm from "../components/AddExpenseForm";
 
 // library imports
 import { toast } from "react-toastify";
@@ -46,6 +47,19 @@ export async function dashboardAction({request}) {
             throw new Error("There was a problem creating your budget.")
         }
     }
+
+    if(_action === "createExpense") {
+      try {
+        createExpense({
+          name: values.newExpense,
+          amount: values.newExpenseAmount,
+          budgetId: values.newExpenseBudget
+        })
+        return toast.success(`Expense ${values.newExpense} created!`)
+      } catch (e) {
+        throw new Error("There was a problem creating your expense.")
+      }
+    }
 }
 
 const Dashboard = () => {
@@ -64,14 +78,15 @@ const Dashboard = () => {
                     <div className="grid-lg">
                       <div className="flex-lg">
                         <AddBudgetForm />
+                        <AddExpenseForm budgets={budgets} />
                       </div>
                     </div>
                     )
                     : (
                     <div className="grid-sm">
-                        <p>Personal budgeting is the secret to financial freedom.</p>
-                        <p>Create a budget to get started!</p>
-                        <AddBudgetForm />
+                      <p>Personal budgeting is the secret to financial freedom.</p>
+                      <p>Create a budget to get started!</p>
+                      <AddBudgetForm />
                     </div>
                   )
             }
